@@ -79,7 +79,7 @@ int main()
     leitura.open("teste.txt");
 
     if(!leitura.is_open()){
-        gotoxy(20,5); cout<<"Nao foi possivel abrir o arquivo"<<endl;
+        gotoxy(20,5); cout<<"Nao foi possivel abrir o arquivo";
         desenha(19,4,33,2);
     }else{
 
