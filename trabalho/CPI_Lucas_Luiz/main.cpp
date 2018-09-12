@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 void hidecursor(void){ //esconde o cursor
     CONSOLE_CURSOR_INFO cursor = {1, FALSE};
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor);
@@ -74,9 +72,12 @@ void interc(int x, int y){
 
 int main()
 {
-
+    string nome;
     ifstream leitura;
-    leitura.open("teste.txt");
+    gotoxy(40, 5); cout << "Qual exercicio?";
+    gotoxy(40,6); cin >> nome;
+    system("cls");
+    leitura.open(nome+".txt");
 
     if(!leitura.is_open()){
         gotoxy(20,5); cout<<"Nao foi possivel abrir o arquivo";
@@ -187,22 +188,6 @@ int main()
      gotoxy(53, 7); cout<<CPI;
     }
 
-    gotoxy(1, 30); system("Pause");
+    gotoxy(1, 27); system("Pause");
      return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
