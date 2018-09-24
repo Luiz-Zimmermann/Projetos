@@ -22,7 +22,7 @@ int main()
     //imprimir(t, 8);
     //chave=endereço neste caso
 
-    int vet[x];
+    char vet[x];
     for(int i=0;i<x;i++){
         cout<<"Informe o endereco: ";
         cin>>vet[i];

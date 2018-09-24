@@ -19,18 +19,22 @@ void gotoxy(short x , short y){ // Para escolher aonde vai cada informação (co
 }
 
 
-struct Thash
-{
-    int chave;
+struct Thash{
+    char chave;
     //char livre;
     string livre;
+    Thash vetor[2];
+    int time;
 };
 
 void iniciaThash(Thash tabela[], int tam){
 
     for(int i=0; i<tam; i++){
-        tabela[i].livre="------";
-        tabela[i].chave=0;
+        for(int j=0;i<2;i++){
+        tabela[i].vetor[j].livre="------";
+        tabela[i].vetor[j].chave="------";
+        tabela[i].vetor[j].time=999;
+        }
 
     }
 
@@ -42,19 +46,45 @@ int posicao( int pos, int tam){
     return pos%tam;
 }
 
-void inserir(Thash tabela[], int chave, int i, int tam){
+int LRU(int x, int y ){
+    if(x>y){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+void inserir(Thash tabela[], char chave, int j, int tam){
 
 
     int pos=posicao(chave, tam);
     //int i=0;
+    int ver=LRU(tabela[pos].vetor[0].time, tabela[pos].vetor[1].time);
 
-    if(chave==tabela[pos].chave){
-        tabela[i].livre="Acerto";
-    }else{
-        tabela[i].livre="Falta";
-        tabela[pos].chave=chave;
+    int cpos;
+      for(int i=0;i<2;i++){
+        if(chave==tabela[pos].vetor[0].chave){
+            tabela[j].vetor[0].livre="Acerto";
+            tabela[j].vetor[0].time=0;
+            cpos=i;
+        }
+      }
+        if(cpos==1 || cpos==2){
+            return;
+        }else if(ver==0){//se o dado1  estiver a mais tempo q dado2, entao o novo dado vai sobreescrever ele
+            tabela[j].vetor[0].livre="Falta";
+            tabela[pos].vetor[0].chave=chave;
+            tabela[j].vetor[0].time=0;
 
-    }
+        }else{//senao o dado novo vai sobreescrever o dado2
+            tabela[j].vetor[1].livre="Falta";
+            tabela[pos].vetor[1].chave=chave;
+            tabela[j].vetor[1].time=0;
+        }
+
+
+
+
 
     /*while(i < tam && tabela[(pos+i)%tam].livre != 'L' && tabela[(pos+i)%tam].livre !='R'){
         i=i+1;
@@ -85,7 +115,7 @@ void inserir(Thash tabela[], int chave, int i, int tam){
 
 }*/
 
-void imprimir(Thash tabela[], int tam, int vet[]){
+void imprimir(Thash tabela[], int tam, char vet[]){
     gotoxy(35, 1); cout<<"Cache apos acesso";
     gotoxy(0,2); cout<<"Endereco"; gotoxy(15,2); cout<<"Validade"; gotoxy(35,2);cout<<"Bloco"; gotoxy(45,2); cout<<"Endereco";
 
