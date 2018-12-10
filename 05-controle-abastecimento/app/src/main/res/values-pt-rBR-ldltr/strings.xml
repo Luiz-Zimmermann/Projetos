@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--nome do programa-->
+    <string name="app_name">Controle de Abastecimento</string>
+
+    <!--mensagens de requisição-->
+    <string name="kilo">Quilometragem atual:</string>
+    <string name="save">Salvar</string>
+    <string name="date">Data:</string>
+    <string name="posto">Posto:</string>
+    <string name="litros">Litros abastecidos:</string>
+    <string name="auto">Autonomia</string>
+
+    <!--Mensagens de erro-->
+    <string name="error">Erro</string>
+    <string name="errorNot">Nada salvo</string>
+    <string name="warning">Informe um valor</string>
+    <string name="warningSave">Erro ao salvar</string>
+    <string name="warningOver">Não pode inserir um valor igual ou menor ao anterior</string>
+
+    <!--texto indicativo-->
+    <string name="kiloEspc">Quilometragem:</string>
+    <string name="litrosEspc">Litros:</string>
+
+    <!--nome dos postos-->
+    <string name="texaco">Texaco</string>
+    <string name="ipiranga">Ipiranga</string>
+    <string name="petro">Petrobras</string>
+    <string name="shell">Shell</string>
+
+    <array name="lista_postos">
+        <item>Petrobras</item>
+        <item>Ipiranga</item>
+        <item>Shell</item>
+        <item>Texaco</item>
+    </array>
+
+</resources>

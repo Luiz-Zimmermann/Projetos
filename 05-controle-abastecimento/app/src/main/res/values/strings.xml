@@ -1,0 +1,37 @@
+<resources>
+    <!--nome do programa-->
+    <string name="app_name">Supply Control</string>
+
+    <!--mensagens de requisição-->
+    <string name="kilo">Current mileage:</string>
+    <string name="save">Save</string>
+    <string name="date">Date:</string>
+    <string name="posto">Fuel station:</string>
+    <string name="litros">Quantity of liters supplied:</string>
+    <string name="auto">Autonomy</string>
+
+    <!--Mensagens de erro-->
+    <string name="error">Error</string>
+    <string name="errorNot">Nothing saved</string>
+    <string name="warning">Inform a value</string>
+    <string name="warningSave">Error while saving</string>
+    <string name="warningOver">Cant insert a value equal or less to the previous one</string>
+
+    <!--texto indicativo-->
+    <string name="kiloEspc">Mileage:</string>
+    <string name="litrosEspc">Liters:</string>
+
+    <!--nome dos postos-->
+    <string name="texaco">Texaco</string>
+    <string name="ipiranga">Ipiranga</string>
+    <string name="petro">Petrobras</string>
+    <string name="shell">Shell</string>
+
+    <array name="lista_postos">
+        <item>Petrobras</item>
+        <item>Ipiranga</item>
+        <item>Shell</item>
+        <item>Texaco</item>
+    </array>
+
+</resources>

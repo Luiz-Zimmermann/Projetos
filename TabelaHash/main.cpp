@@ -10,6 +10,8 @@ using namespace std;
 
 int main()
 {
+
+
     int  x;
     cout<<"Numero de blocos da Cache: ";
     cin>>x;
@@ -22,7 +24,7 @@ int main()
     //imprimir(t, 8);
     //chave=endereço neste caso
 
-    char vet[x];
+    int vet[x];
     for(int i=0;i<x;i++){
         cout<<"Informe o endereco: ";
         cin>>vet[i];
