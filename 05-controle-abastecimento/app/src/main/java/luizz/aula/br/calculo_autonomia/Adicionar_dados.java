@@ -29,8 +29,8 @@ public class Adicionar_dados extends AppCompatActivity {
         data = findViewById(R.id.editdate);
         fuel = findViewById(R.id.editfuel);
         //para teste de coordenadas
-        //lt = findViewById(R.id.lat);
-        //lng = findViewById(R.id.lng);
+//        lt = findViewById(R.id.lat);
+//        lng = findViewById(R.id.lng);
 
         //dapta o vetor de opções para usar no spinner
         ArrayAdapter<CharSequence> adapterSpin = ArrayAdapter.createFromResource(this.getApplicationContext(), R.array.lista_postos, android.R.layout.simple_spinner_item);
@@ -75,14 +75,15 @@ public class Adicionar_dados extends AppCompatActivity {
                 //Descomentar esse trecho para poder utilizar os EditText para testar as coordenadas,
                 //as atribuições das variaveis (findViewById) ali em cima
                 //e tambem descomentar no layout da activity os EditText "lat" e "lng"
-                
-                //item.setLatitude(Double.parseDouble(lt.toString()));
-                //item.setLongitude(Double.parseDouble(lng.toString()));
+                //item.setLatitude(Double.parseDouble(lt.getText().toString()));
+                //item.setLongitude(Double.parseDouble(lng.getText().toString()));
 
              //Se não ele seta valores que ultrapassam os valores permitidos pelo google
                 // (de +-85 de latitude e +-185 de longitude) para encontrar uma localização,
              //para poder fazer uma verificação mais tarde
             }else{
+//                item.setLatitude(Double.parseDouble(lt.getText().toString()));
+//                item.setLongitude(Double.parseDouble(lng.getText().toString()));
                 item.setLatitude(404);
                 item.setLongitude(404);
             }

@@ -73,14 +73,21 @@ public class item_detalhado extends AppCompatActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.mMap = googleMap;
+
+        String posto = "";
+        if(objeto.getPosto()==0){
+            posto = getString(R.string.petro);
+        }else if(objeto.getPosto()==1){
+            posto = getString(R.string.ipiranga);
+        }else if(objeto.getPosto()==2){
+            posto = getString(R.string.shell);
+        }else if(objeto.getPosto()==3){
+            posto = getString(R.string.texaco);
+        }
+
         LatLng localizacao = new LatLng(this.objeto.getLatitude(), this.objeto.getLongitude());
-        this.mMap.addMarker(new MarkerOptions().position(localizacao).title("Marker in Sydney"));
+        this.mMap.addMarker(new MarkerOptions().position(localizacao).title(posto).snippet(objeto.getData()));
         this.mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(localizacao, 15f));
-//        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-50, 15);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-//        LatLng outro = new LatLng(-120,45);
-//        mMap.addMarker(new MarkerOptions().position(outro).title("aqi krl"));
+
     }
 }

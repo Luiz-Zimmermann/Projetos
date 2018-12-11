@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Lista_de_Registros_Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
-    private ArrayList<Info_List_Item> dados = new ArrayList<Info_List_Item>();
+    private ArrayList<Info_List_Item> dados;
     private GoogleMap mMap;
 
     @Override
@@ -49,13 +49,23 @@ public class Lista_de_Registros_Mapa extends AppCompatActivity implements OnMapR
         GPSprovider g = new GPSprovider(getApplicationContext());
         Location l = g.getLocation();
         LatLng foco = new LatLng(l.getLatitude(), l.getLongitude());
-        this.mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(foco, 10f));
+        this.mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(foco, 15f));
         if (dados.size() > 0){
 
-            for (int i = 0; i <= dados.size(); i++) {
+            for (int i = 0; i < dados.size(); i++) {
+                String posto = "";
+                if(dados.get(i).getPosto()==0){
+                    posto = getString(R.string.petro);
+                }else if(dados.get(i).getPosto()==1){
+                    posto = getString(R.string.ipiranga);
+                }else if(dados.get(i).getPosto()==2){
+                    posto = getString(R.string.shell);
+                }else if(dados.get(i).getPosto()==3){
+                    posto = getString(R.string.texaco);
+                }
                 LatLng localizacao = new LatLng(dados.get(i).getLatitude(), dados.get(i).getLongitude());
                 this.mMap.addMarker(new MarkerOptions().position(localizacao)
-                        .title(dados.get(i).getDistancia() + "/n" + dados.get(i).getLitros()).snippet(dados.get(i).getData()));
+                        .title(posto).snippet(dados.get(i).getData()));
             }
         }else{
             Toast.makeText(this.getApplicationContext(), getString(R.string.NotingHere), Toast.LENGTH_LONG).show();
