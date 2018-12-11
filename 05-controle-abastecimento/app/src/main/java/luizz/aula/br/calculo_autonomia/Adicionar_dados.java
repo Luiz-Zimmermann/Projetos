@@ -1,15 +1,7 @@
 package luizz.aula.br.calculo_autonomia;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
+
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,12 +13,11 @@ import android.widget.Toast;
 //quando o botao salvar for precionado os dados serao pegos
 public class Adicionar_dados extends AppCompatActivity {
 
-    private EditText km, data, fuel, lt,lng;
+    private EditText km, data, fuel;
+    private EditText lt,lng;//para teste
     private Spinner posto;
     private double kmOld;
     private boolean permissaofinal;
-    private Location location;
-    private LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +28,9 @@ public class Adicionar_dados extends AppCompatActivity {
         km = findViewById(R.id.editkm);
         data = findViewById(R.id.editdate);
         fuel = findViewById(R.id.editfuel);
-
-        lt = findViewById(R.id.lat);
-        lng = findViewById(R.id.lng);
+        //para teste de coordenadas
+        //lt = findViewById(R.id.lat);
+        //lng = findViewById(R.id.lng);
 
         //dapta o vetor de opções para usar no spinner
         ArrayAdapter<CharSequence> adapterSpin = ArrayAdapter.createFromResource(this.getApplicationContext(), R.array.lista_postos, android.R.layout.simple_spinner_item);
@@ -57,7 +48,6 @@ public class Adicionar_dados extends AppCompatActivity {
         //Cria um item sem nada
         Info_List_Item item = new Info_List_Item();
 
-
         if (km.getText().toString().equals("")) {
             this.km.setError(getString(R.string.warning));
             return;
@@ -74,21 +64,28 @@ public class Adicionar_dados extends AppCompatActivity {
             this.km.setError(getString(R.string.warningOver));
             return;
         }
-
+        //Verifica se tem permissao
         if (permissaofinal == true) {
             GPSprovider g = new GPSprovider(getApplicationContext());
             Location l = g.getLocation();
+            //Se tiver, ele pega as coordenadas
             if (l != null) {
                 item.setLatitude(l.getLatitude());
                 item.setLongitude(l.getLongitude());
+                //Descomentar esse trecho para poder utilizar os EditText para testar as coordenadas,
+                //as atribuições das variaveis (findViewById) ali em cima
+                //e tambem descomentar no layout da activity os EditText "lat" e "lng"
+                
                 //item.setLatitude(Double.parseDouble(lt.toString()));
                 //item.setLongitude(Double.parseDouble(lng.toString()));
 
+             //Se não ele seta valores que ultrapassam os valores permitidos pelo google
+                // (de +-85 de latitude e +-185 de longitude) para encontrar uma localização,
+             //para poder fazer uma verificação mais tarde
+            }else{
+                item.setLatitude(404);
+                item.setLongitude(404);
             }
-//        } else {
-//            item.setLatitude(010);
-//            item.setLongitude(010);
-        //}
        }
 
         item.setData(data.getText().toString());
@@ -96,11 +93,6 @@ public class Adicionar_dados extends AppCompatActivity {
         item.setLitros(Double.parseDouble(fuel.getText().toString()));
         item.setPosto(posto.getSelectedItemPosition());
 
-//        item.setLatitude(Double.parseDouble(lt.getText().toString()));
-//        item.setLongitude(Double.parseDouble(lng.getText().toString()));
-
-//        item.setLatitude(-14.23);
-//        item.setLongitude(-51.92);
 
         //salvando
         boolean sucesso = Info_ListDAO.salvar(this.getApplicationContext(), item);
@@ -112,35 +104,4 @@ public class Adicionar_dados extends AppCompatActivity {
             Toast.makeText(this.getApplicationContext(), getString(R.string.warningSave), Toast.LENGTH_LONG).show();
         }
     }
-
-
-
-
-//    public void getLocation(final Info_List_Item item) {
-//
-//
-//        location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
-//        try{
-//            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//            LocationListener locationListener = new LocationListener() {
-//                @Override
-//                public void onLocationChanged(Location location) {
-//
-//                    item.setLatitude(location.getLatitude());
-//                    item.setLongitude(location.getLongitude());
-//                    locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
-//                }
-//                @Override
-//                public void onStatusChanged(String provider, int status, Bundle extras) { }
-//                @Override
-//                public void onProviderEnabled(String provider) { }
-//                @Override
-//                public void onProviderDisabled(String provider) {}
-//            };
-//            locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 0, 0, locationListener);
-//        }catch (SecurityException e){
-//           Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-//        }
-//
-//    }
 }

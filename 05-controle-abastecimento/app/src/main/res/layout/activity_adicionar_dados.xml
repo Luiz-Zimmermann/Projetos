@@ -5,17 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Adicionar_dados">
-
-    <EditText
-        android:id="@+id/lng"
-        android:layout_width="99dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:layout_marginBottom="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/butSave"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!--EditText para pegar Latitude
+        apenas para testar se estava salvando e carregando,
+        pois o GPS do meu celular não funciona e não sei o motivo-->
+    <!--<EditText-->
+        <!--android:id="@+id/lng"-->
+        <!--android:layout_width="99dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="224dp"-->
+        <!--android:layout_marginBottom="24dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/butSave"-->
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
+    <!--EditText para pegar Longitude-->
+    <!--<EditText-->
+        <!--android:id="@+id/lat"-->
+        <!--android:layout_width="99dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="7dp"-->
+        <!--android:layout_marginBottom="25dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/butSave"-->
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
 
     <EditText
         android:id="@+id/editfuel"
@@ -117,15 +130,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/lat"
-        android:layout_width="99dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginBottom="25dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/butSave"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,5 @@
 package luizz.aula.br.calculo_autonomia;
 
-import android.os.Bundle;
-
 import java.io.Serializable;
 
 public class Info_List_Item implements Serializable {

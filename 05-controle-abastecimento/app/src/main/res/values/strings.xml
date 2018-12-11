@@ -16,6 +16,9 @@
     <string name="warning">Inform a value</string>
     <string name="warningSave">Error while saving</string>
     <string name="warningOver">Cant insert a value equal or less to the previous one</string>
+    <string name="NotingHere">Dont have any registers yet</string>
+    <string name="GPSdisable">Map feature disabled, you did not give GPS permission</string>
+
 
     <!--texto indicativo-->
     <string name="kiloEspc">Mileage:</string>

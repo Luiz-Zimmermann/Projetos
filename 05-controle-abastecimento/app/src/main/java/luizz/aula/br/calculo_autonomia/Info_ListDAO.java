@@ -4,13 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Info_ListDAO {
@@ -18,7 +11,7 @@ public class Info_ListDAO {
     private static ArrayList<Info_List_Item> Cache = new ArrayList<Info_List_Item>();
 
 
-    //salva o dado no arquivo e na cahce
+    //salva o dado no Banco e na Cache
     public static boolean salvar(Context c, Info_List_Item itemSave){
         DbHelper DataBase = new DbHelper(c);
         SQLiteDatabase db = DataBase.getWritableDatabase();

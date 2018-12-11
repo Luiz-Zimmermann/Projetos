@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 //classe que ira mostrar os conteudos da lista
 public class gaveta_itens extends RecyclerView.ViewHolder {

@@ -17,6 +17,8 @@
     <string name="warning">Informe um valor</string>
     <string name="warningSave">Erro ao salvar</string>
     <string name="warningOver">Não pode inserir um valor igual ou menor ao anterior</string>
+    <string name="NotingHere">Não há nenhum registro ainda</string>
+    <string name="GPSdisable">Recurso de mapa desativado, você não deu permissão para utilizar o GPS</string>
 
     <!--texto indicativo-->
     <string name="kiloEspc">Quilometragem:</string>

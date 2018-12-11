@@ -42,6 +42,18 @@ public class list_View extends AppCompatActivity {
         startActivityForResult(trocar_act, codigo);
     }
 
+    public void onClickMap(View v){
+
+        if (permissao){
+            Intent trocar_act = new Intent(this.getApplicationContext(), Lista_de_Registros_Mapa.class);
+            this.startActivity(trocar_act);
+
+        }else{
+            Toast.makeText(this.getApplicationContext(), getString(R.string.GPSdisable), Toast.LENGTH_LONG).show();
+            return;
+        }
+    }
+
     public  void onclickVoltar(View v){
         setResult(1);
         finish();

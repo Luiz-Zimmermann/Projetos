@@ -9,8 +9,10 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recicleList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add"
@@ -38,5 +40,17 @@
         app:layout_constraintEnd_toStartOf="@+id/add"
         app:layout_constraintTop_toTopOf="@+id/add"
         app:srcCompat="@drawable/ic_arrow_left_black_48dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:clickable="true"
+        android:onClick="onClickMap"
+        app:layout_constraintBottom_toTopOf="@+id/add"
+        app:layout_constraintEnd_toEndOf="@+id/add"
+        app:srcCompat="@drawable/ic_google_maps_black_48dp" />
 
 </android.support.constraint.ConstraintLayout>
