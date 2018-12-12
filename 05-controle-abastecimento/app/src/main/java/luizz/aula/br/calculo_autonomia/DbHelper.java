@@ -10,12 +10,12 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final int VERSAO_BD = 1;
 
     public DbHelper(Context context) {
-        super(context, "Banco_de_Dados" , null, DbHelper.VERSAO_BD);
+        super(context, "Banco_de_Registros" , null, DbHelper.VERSAO_BD);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQLCriaTabelas = "CREATE TABLE cadastros (" +
+        String SQLCriaTabelas = "CREATE TABLE registros (" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "POSTO INT," +
                 "DATA TEXT," +
@@ -30,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE cadastros");
+        db.execSQL("DROP TABLE registros");
         this.onCreate(db);
     }
 }

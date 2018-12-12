@@ -1,35 +1,26 @@
 <resources>
-    <!--nome do programa-->
-    <string name="app_name">Supply Control</string>
 
-    <!--mensagens de requisição-->
-    <string name="kilo">Current mileage:</string>
-    <string name="save">Save</string>
-    <string name="date">Date:</string>
-    <string name="posto">Fuel station:</string>
-    <string name="litros">Quantity of liters supplied:</string>
-    <string name="auto">Autonomy</string>
-
-    <!--Mensagens de erro-->
-    <string name="error">Error</string>
-    <string name="errorNot">Nothing saved</string>
-    <string name="warning">Inform a value</string>
-    <string name="warningSave">Error while saving</string>
-    <string name="warningOver">Cant insert a value equal or less to the previous one</string>
-    <string name="NotingHere">Dont have any registers yet</string>
-    <string name="GPSdisable">Map feature disabled, you did not give GPS permission</string>
-
-
-    <!--texto indicativo-->
-    <string name="kiloEspc">Mileage:</string>
-    <string name="litrosEspc">Liters:</string>
-
-    <!--nome dos postos-->
+    <string name="app_name">Controle de Abastecimento</string>
+    <string name="kilo">Quilometragem atual:</string>
+    <string name="save">Salvar</string>
+    <string name="date">Data:</string>
+    <string name="posto">Posto:</string>
+    <string name="litros">Litros abastecidos:</string>
+    <string name="auto">Autonomia</string>
+    <string name="error">Erro</string>
+    <string name="errorNot">Nada salvo</string>
+    <string name="warning">Informe um valor</string>
+    <string name="warningSave">Erro ao salvar</string>
+    <string name="warningOver">Não pode inserir um valor igual ou menor ao anterior</string>
+    <string name="NotingHere">Não há nenhum registro ainda</string>
+    <string name="GPSdisable">Recurso de mapa desativado, você não deu permissão para utilizar o GPS</string>
+    <string name="kiloEspc">Quilometragem:</string>
+    <string name="litrosEspc">Litros:</string>
     <string name="texaco">Texaco</string>
     <string name="ipiranga">Ipiranga</string>
     <string name="petro">Petrobras</string>
     <string name="shell">Shell</string>
-
+    <!--peguei de outra pessoa porque não estava conseguindo fazer-->
     <array name="lista_postos">
         <item>Petrobras</item>
         <item>Ipiranga</item>

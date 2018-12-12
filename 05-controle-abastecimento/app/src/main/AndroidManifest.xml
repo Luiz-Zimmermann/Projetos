@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDpW2Di5QsVQyCfhL7e9jnd-f0rVOIRI3g" />
+            android:value="AIzaSyAg4fN8JRQB5Vijc97D4JdSvmmY6LZK6XM" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -24,9 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Adicionar_dados" />
-        <activity android:name=".list_View" />
-        <activity android:name=".item_detalhado" />
+        <activity android:name=".abastecimentoDados" />
+        <activity android:name=".abastecimentoLista" />
+        <activity android:name=".abastecimentoDetalhe" />
         <activity android:name=".Lista_de_Registros_Mapa"></activity>
     </application>
 

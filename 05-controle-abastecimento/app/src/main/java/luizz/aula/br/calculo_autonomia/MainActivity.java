@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean permissao;
     int codigo = 2409;
 
+    //Não sei o porque, mas o programa não funciona em APIs acima de 27 pelo menos em alguns devices emulados no Android Studio
+    //Foi testado em 4 dispositivos reais diferentes e pelo menos nesses casos funcionou
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         add = findViewById(R.id.add);
         autonomia = findViewById(R.id.tvKilo);
 
-        ArrayList<Info_List_Item> dados = new ArrayList<Info_List_Item>();
-        dados = Info_ListDAO.carrega_Lista(this.getApplicationContext());
+        ArrayList<abastecimentoInfo> dados = new ArrayList<abastecimentoInfo>();
+        dados = abastecimentoDAO.carrega_Lista(this.getApplicationContext());
         if(dados.size()>1){
             double litrosTotal=0, distance, kmpL;
             distance = dados.get(dados.size()-1).getDistancia() - dados.get(0).getDistancia();
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onclick(View v){
 
-       Intent trocar_act = new Intent(this.getApplicationContext(), list_View.class);
+       Intent trocar_act = new Intent(this.getApplicationContext(), abastecimentoLista.class);
        trocar_act.putExtra("permissao", permissao);
        startActivityForResult(trocar_act, codigo);
     }
@@ -86,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if(requestCode==codigo) {
             if (resultCode == 1) {
-                ArrayList<Info_List_Item> dados = new ArrayList<Info_List_Item>();
-                dados = Info_ListDAO.carrega_Lista(this.getApplicationContext());
+                ArrayList<abastecimentoInfo> dados = new ArrayList<abastecimentoInfo>();
+                dados = abastecimentoDAO.carrega_Lista(this.getApplicationContext());
                 if(dados.size()>1){
                     double litrosTotal=0, distance, kmpL;
                     distance = dados.get(dados.size()-1).getDistancia() - dados.get(0).getDistancia();

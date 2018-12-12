@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Lista_de_Registros_Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
-    private ArrayList<Info_List_Item> dados;
+    private ArrayList<abastecimentoInfo> dados;
     private GoogleMap mMap;
 
     @Override
@@ -25,8 +25,7 @@ public class Lista_de_Registros_Mapa extends AppCompatActivity implements OnMapR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_de__registros__mapa);
 
-
-        dados = Info_ListDAO.carrega_Lista(this.getApplicationContext());
+        dados = abastecimentoDAO.carrega_Lista(this.getApplicationContext());
 
         iniciaMapa();
     }
@@ -35,7 +34,6 @@ public class Lista_de_Registros_Mapa extends AppCompatActivity implements OnMapR
     public void iniciaMapa() {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.AllMap);
         mapFragment.getMapAsync(Lista_de_Registros_Mapa.this);
-
     }
 
     public void OnClickVoltar(View v){
@@ -46,7 +44,7 @@ public class Lista_de_Registros_Mapa extends AppCompatActivity implements OnMapR
     public void onMapReady(GoogleMap googleMap) {
         this.mMap = googleMap;
 
-        GPSprovider g = new GPSprovider(getApplicationContext());
+        LocalizaGPS g = new LocalizaGPS(getApplicationContext());
         Location l = g.getLocation();
         LatLng foco = new LatLng(l.getLatitude(), l.getLongitude());
         this.mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(foco, 15f));
