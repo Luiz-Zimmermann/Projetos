@@ -1,0 +1,360 @@
+
+body{
+    background-image: url("balne.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+.infooco{
+    width: 400px;
+}
+
+#descricaooco{
+    left: 200xp;
+    width: 100%; 
+    height: 180px;
+}
+
+#titulooco{
+    width: 400px;
+}
+#cidad{
+    width: 400px;
+}
+
+#Sobre{
+    background-image: url("cristo.jpg");
+    background-color: #45a049;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a.link:link{
+    text-decoration: none;
+}
+
+#barranav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(73, 73, 73);
+}
+#opcoes{
+    width: 800px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navop{
+    float: left;
+}
+
+.navop a:hover{
+    background-color: #111;
+    color: white;
+}
+
+.navop a{
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.linknew{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+}
+li{
+    list-style: none;
+}
+.opnews{
+    
+    list-style-type: none;
+    text-decoration: none;
+}
+#listnav{
+    position: absolute;
+    width: 600px;
+     top: 30px;
+
+}
+.linknew:link{
+    color: #111;
+}
+#noticiaslist{
+     
+    width: 800px;
+    margin-top: 20px;
+}
+#canto2{
+    float: right;
+}
+
+#canto{
+    float: right;
+}
+#logout{
+    display: none;
+    float: right;
+}
+
+.logo{
+    margin-top: 30px;
+   width: 100px;
+   height: 100px;
+}
+#civil{
+    margin-left: 200px;
+     
+    width: 80px;
+    height: 80px;
+}
+
+#chuva{
+    display: inline-block;
+}
+.noticia{
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+}
+#noticias{
+    position: relative;
+  
+    top: 70px;
+    margin-left: 70px;
+    width: 400px;
+    height: 300px;
+}
+
+#noticias2{
+    position: relative;
+ 
+    margin-top: 100px;
+    margin-left: 70px;
+    width: 400px;
+    height: 300px;
+}
+#telameio{
+    position: relative;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.9); 
+    width: 900px;
+    height: 900px;
+
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#titulo{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.sla{
+    position: relative;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    width: 400px;
+    padding: 10px;
+}
+#oco{
+    position: relative;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    width: 600px;
+    padding: 10px;
+}
+textarea{
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.imgnews{
+    float: left;
+    width: 220px;
+    height: 150px;
+}
+#info{
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: 170px;
+    background-color: #ccc;
+}
+.contact{
+    float: left;
+}
+
+#infoe{
+    position: absolute;
+    margin-left: 300px;
+}
+
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+  .gracolor{
+    background-color: rgb(91, 151, 201); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, blue, orange); /* Standard syntax (must be last) */
+    
+  }
+  .colorgra{
+    background-color: transparent;
+    border-color: rgb(1, 18, 175);
+  }
+  .colorgra:hover{
+      color: white;
+      background-color: rgb(3, 0, 199)
+  }
+
+  #registro{
+      display: none;
+  }
+  #cadastro{
+      top: 30px;
+      display: none;
+  }
+
+  #noticias{
+      display: block;
+  }
+ 
+ 
+
+  #sobre{
+      display: none;
+  }
+
+  #ocorrencia{
+      background-color: rgb(243, 239, 239);
+      position: relative;
+      display: none;
+      top: 70px;
+  }
+
+  #subnitcolor{
+    background-color: rgb(142, 246, 72);
+    border-color: rgb(1, 18, 175);
+  }
+  #subnitcolor:hover{
+      color: black;
+      background-color: rgb(9, 221, 20)
+  }
+  #ocorrenciaa{
+      display: none;
+  }
+  #ver{
+     display: none;
+     border-radius: 5px;
+     width: 90%;
+     padding: 20px;
+    height:250px;
+    overflow:auto;  
+  }
+
+  #titulotable{
+    display: none;
+    position: relative;
+    top: 20px;
+    left: 50px;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ 
+
+#pos{
+    
+    display: none;
+}
+#posbut{
+    display: none;
+}
+
+ 
